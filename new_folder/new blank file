@@ -1,0 +1,7 @@
+print("i am a new file")
+print(bool([]))
+print (*[2])
+with open("firist_file ","r") as new_file :
+    #new_file.write("this the first file i created\n"*50)
+    file_data = new_file.readlines()
+    print (file_data)

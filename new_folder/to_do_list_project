@@ -1,0 +1,47 @@
+mylist = []
+while True :
+    print ("program started :)")
+    act = input('chose : add , remove , show , exit ').lower().strip()
+    if act == "add":
+        task = input("what is the task ")
+        mylist.append(task)
+        print (f'your tack : {task} is in your list ')
+    
+    elif act == "show" :
+        if bool(mylist) != False:
+            
+            print ("your list :")
+            
+            for count , items in enumerate(mylist,1):
+                print (f"{count} - {items}")
+        
+        else :
+            print ("tour lsit is empty ")            
+        
+        
+        continue
+    
+    elif act == "remove" :
+        removed = input("what do you want to remove ")
+        if removed in mylist : 
+            mylist.remove(removed)
+            print(f"{removed}was removed from your list ")
+        else :
+            print( "task is not in your list ")
+        
+        continue
+
+    
+    
+    
+    elif act == "exit" :
+        print("program is closed :(") 
+    
+        break
+
+    elif act not in ("add" , "remove" , "exit", "show") : 
+        print ("chose only from thes choises")
+        
+        continue
+    
+
