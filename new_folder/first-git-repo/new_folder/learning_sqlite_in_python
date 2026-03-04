@@ -1,0 +1,17 @@
+import sqlite3  
+db = sqlite3.connect("firstdb.db")   #to make or conect to the data base 
+cr = db.cursor()     #to make a cursor in the data to add or read it 
+
+#to creat a table and add data to it 
+cr.execute("CREATE TABLE IF NOT EXISTS users (name text , progres integer , id integer )")
+cr.execute("CREATE TABLE IF NOT EXISTS users_2 (name text , progres integer , id integer )")
+mylist = ['aly', 'osama', 'koko', 'soso' , 'toto' , 'nono']
+for key , names in enumerate(mylist) :
+    cr.execute(f"insert into users (id , progres ,name) values ({key+1}, 1 ,'{names}')")
+db.commit()
+db.close()
+# to read data and fetch it 
+cr.execute("select name , id from users")
+print(cr.fetchall())
+# to close the data 
+db.close
